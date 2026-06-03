@@ -46,10 +46,10 @@ export const products = [
   // 👕 CASUAL
   {
     id: 7,
-    title: "Casual Street Shirt",
+    title: "Shorts",
     price: 2499,
     category: "casual",
-    image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7",
+    image: "/Shorts.png",
   },
   {
     id: 8,
@@ -67,7 +67,7 @@ export const products = [
   },
   {
     id: 10,
-    title: "Casual Denim Shirt",
+    title: "Casual T-shirt",
     price: 2799,
     category: "casual",
     image: "/CasualDenimShirt.webp",
@@ -132,28 +132,28 @@ export const products = [
   },
 
    {
-    id: 101,
+    id: 201,
     title: "AMI Paris T-shirt",
     price: 1145,
     image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
     category: "menswear",
   },
   // {
-  //   id: 102,
+  //   id: 202,
   //   title: "On Running Sneakers",
   //   price: 231,
   //   image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519",
   //   category: "menswear",
   // },
   // {
-  //   id: 103,
+  //   id: 203,
   //   title: "Maison Mihara Shoes",
   //   price: 223,
   //   image: "https://images.unsplash.com/photo-1582588678413-dbf45f4823e9",
   //   category: "menswear",
   // },
   {
-    id: 104,
+    id: 204,
     title: "Black Premium T-shirt",
     price: 1172,
     image: "/blackt-shirt.webp",
@@ -167,7 +167,7 @@ export const products = [
   //   category: "menswear",
   // },
   {
-    id: 101,
+    id: 301,
     name: "Floral Summer Dress",
     brand: "Zara",
     price: 2499,
@@ -180,7 +180,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 102,
+    id: 302,
     name: "Lightweight High Support Sports Bra",
     brand: "Prada",
     price: 8999,
@@ -193,7 +193,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 103,
+    id: 303,
     name: " Heavy Blue Marl – Dawntown",
     brand: "Levi's",
     price: 4599,
@@ -219,7 +219,7 @@ export const products = [
   //   category: "women",
   // },
   {
-    id: 105,
+    id: 305,
     name: "Long Sleeve Tops",
     brand: "H&M",
     price: 999,
@@ -232,7 +232,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 106,
+    id: 306,
     name: "Training Oversized Fleece Hoodie",
     brand: "Levi's",
     price: 2999,
@@ -245,7 +245,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 107,
+    id:307,
     name: "Everyday Seamless Long Sleeve Crop Top",
     brand: "Forever 21",
     price: 3499,
@@ -258,7 +258,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 108,
+    id: 308,
     name: "Mini Skirt",
     brand: "Bershka",
     price: 1899,
@@ -271,7 +271,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 109,
+    id: 309,
     name: "Casual Blazer",
     brand: "Mango",
     price: 4999,
@@ -284,7 +284,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 110,
+    id: 310,
     name: "Knitted Sweater",
     brand: "Uniqlo",
     price: 2599,
@@ -297,7 +297,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 111,
+    id: 311,
     name: "Straight Fit Trousers",
     brand: "Zara",
     price: 2799,
@@ -310,7 +310,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 112,
+    id: 312,
     name: "Stylish Sunglasses",
     brand: "Ray-Ban",
     price: 5999,
@@ -323,7 +323,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 113,
+    id: 313,
     name: "Crossbody Bag",
     brand: "Michael Kors",
     price: 7999,
@@ -336,7 +336,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 114,
+    id: 314,
     name: "Party Wear Gown",
     brand: "Gucci",
     price: 15999,
@@ -349,7 +349,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 115,
+    id: 315,
     name: "Flat Sandals",
     brand: "Bata",
     price: 1499,
@@ -362,7 +362,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 116,
+    id: 316,
     name: "White Sneakers",
     brand: "Nike",
     price: 4999,
@@ -375,7 +375,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 117,
+    id: 317,
     name: "Silk Shirt",
     brand: "Armani",
     price: 6999,
@@ -388,7 +388,7 @@ export const products = [
     category: "women",
   },
   {
-    id: 118,
+    id: 318,
     name: "Winter Coat",
     brand: "Zara",
     price: 8999,

@@ -28,6 +28,7 @@ import {
 } from "framer-motion";
 
 import { useCart } from "../context/CartContext";
+import { products } from "../data/data";
 
 const ProductDetails = () => {
 
@@ -57,68 +58,40 @@ const ProductDetails = () => {
   const [activeImage, setActiveImage] =
     useState(0);
 
-  /* GET PRODUCT */
-  useEffect(() => {
+useEffect(() => {
 
-    const products =
-      JSON.parse(
-        localStorage.getItem(
-          "products"
-        )
-      ) || [];
+  const foundProduct =
+    products.find(
+      (item) =>
+        String(item.id) === String(id)
+    );
 
-    const foundProduct =
-      products.find(
-        (item) =>
-          String(item.id) ===
-          String(id)
-      );
+  if (foundProduct) {
 
-    if (foundProduct) {
+    const colorVariants =
+      foundProduct.colors &&
+      foundProduct.colors.length > 0
+        ? foundProduct.colors
+        : [
+            {
+              name: "Soon",
+            images: [
+  foundProduct.image,
+  foundProduct.hoverImage ||
+    foundProduct.image,
+  foundProduct.image,
+]
+            },
+          ];
 
-      const colorVariants =
-        foundProduct.colors &&
-        foundProduct.colors.length > 0
-          ? foundProduct.colors
-          : [
-              {
-                name:
-                  foundProduct.colorName1 ||
-                  "Black",
+    setProduct({
+      ...foundProduct,
+      colors: colorVariants,
+    });
 
-                images: [
-                  foundProduct.image1,
-                  foundProduct.image2,
-                  foundProduct.image3,
-                ],
-              },
+  }
 
-              {
-                name:
-                  foundProduct.colorName2 ||
-                  "Grey",
-
-                images: [
-                  foundProduct.color2image1 ||
-                    foundProduct.image1,
-
-                  foundProduct.color2image2 ||
-                    foundProduct.image2,
-
-                  foundProduct.color2image3 ||
-                    foundProduct.image3,
-                ],
-              },
-            ];
-
-      setProduct({
-        ...foundProduct,
-        colors: colorVariants,
-      });
-
-    }
-
-  }, [id]);
+}, [id]);
 
   if (!product) {
 
@@ -230,7 +203,7 @@ const ProductDetails = () => {
         "
       >
 
-     {/* ================= LEFT ================= */}
+{/* ================= LEFT ================= */}
 <div
   ref={leftSectionRef}
   className="
@@ -255,10 +228,7 @@ const ProductDetails = () => {
   >
 
     {currentImages.map(
-      (
-        image,
-        index
-      ) => (
+      (image, index) => (
 
         <motion.div
           key={index}
@@ -272,8 +242,7 @@ const ProductDetails = () => {
           }}
           transition={{
             duration: 0.5,
-            delay:
-              index * 0.1,
+            delay: index * 0.1,
           }}
           className={`
             relative
@@ -289,72 +258,12 @@ const ProductDetails = () => {
           `}
         >
 
-          {/* IMAGE COUNT */}
-          <div
-            className="
-              absolute
-              top-4
-              left-4
-              z-20
-              bg-black/70
-              backdrop-blur-xl
-              text-white
-              text-xs
-              font-semibold
-              px-3
-              py-1.5
-              rounded-full
-              border
-              border-white/10
-            "
-          >
-
-            0{index + 1}
-
-          </div>
-
-          {/* ACTIVE TAG */}
-          {activeImage ===
-            index && (
-
-            <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              className="
-                absolute
-                top-4
-                right-4
-                z-20
-                bg-white
-                text-black
-                text-[10px]
-                tracking-[2px]
-                uppercase
-                font-bold
-                px-3
-                py-1.5
-                rounded-full
-              "
-            >
-
-              Viewing
-
-            </motion.div>
-
-          )}
-
           {/* IMAGE */}
           <img
             src={image}
             alt=""
             onMouseEnter={() =>
-              setActiveImage(
-                index
-              )
+              setActiveImage(index)
             }
             className="
               w-full
@@ -363,10 +272,12 @@ const ProductDetails = () => {
               md:h-[500px]
               xl:h-[650px]
               object-cover
+              blur-[6px]
+              brightness-[0.8]
+              scale-105
               transition-all
               duration-700
               ease-out
-              group-hover:scale-105
             "
           />
 
@@ -375,31 +286,84 @@ const ProductDetails = () => {
             className="
               absolute
               inset-0
-              bg-gradient-to-t
-              from-black/50
-              via-transparent
-              to-transparent
-              opacity-0
-              group-hover:opacity-100
-              transition-all
-              duration-500
+              bg-black/20
+              backdrop-blur-[1px]
             "
           />
 
-          {/* BOTTOM SHADOW */}
+          {/* LOGO ON EVERY IMAGE */}
           <div
             className="
               absolute
-              bottom-0
-              left-0
-              w-full
-              h-24
-              bg-gradient-to-t
-              from-black/70
-              to-transparent
-              opacity-70
+              inset-0
+              flex
+              items-center
+              justify-center
+              pointer-events-none
             "
-          />
+          >
+
+            {/* GLOW */}
+            <div
+              className="
+                absolute
+                w-[220px]
+                h-[220px]
+                rounded-full
+                bg-white/10
+                blur-[60px]
+              "
+            />
+
+            {/* LOGO */}
+            <img
+              src="/GymSwordlogo.png"
+              alt="GymSword"
+              className="
+                w-[120px]
+                md:w-[160px]
+                opacity-90
+                drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]
+              "
+            />
+
+            {/* LAUNCH TEXT */}
+            <div
+              className="
+                absolute
+                bottom-8
+                left-1/2
+                -translate-x-1/2
+                text-center
+              "
+            >
+              <p
+                className="
+                  text-white
+                  text-[10px]
+                  uppercase
+                  tracking-[4px]
+                  font-semibold
+                "
+              >
+                Launching Soon
+              </p>
+
+              <h3
+                className="
+                  mt-2
+                  text-sm
+                  md:text-lg
+                  font-bold
+                  uppercase
+                  text-white
+                "
+              >
+                GymSword Collection
+              </h3>
+            </div>
+
+          </div>
 
         </motion.div>
 
@@ -468,12 +432,12 @@ const ProductDetails = () => {
       "
     >
 
-      {product.title}
+  {product.title || product.name}
 
     </motion.h1>
 
     {/* DESC */}
-    <p
+    {/* <p
       className="
         mt-8
         text-gray-500
@@ -487,7 +451,7 @@ const ProductDetails = () => {
       Breathable Material |
       Relaxed Fit |
       Ultra Soft Feel
-    </p>
+    </p> */}
 
     {/* PRICE */}
     <div
@@ -500,7 +464,7 @@ const ProductDetails = () => {
       "
     >
 
-      <span
+      {/* <span
         className="
           text-gray-400
           line-through
@@ -508,17 +472,47 @@ const ProductDetails = () => {
         "
       >
         ₹1,999
-      </span>
+      </span> */}
 
-      <span
-        className="
-          text-4xl
-          font-black
-          text-[#111]
-        "
-      >
-        ₹{product.price}
-      </span>
+    <div
+  className="
+    relative
+    overflow-hidden
+  "
+>
+
+  <span
+    className="
+      text-4xl
+      font-black
+      text-[#111]
+      blur-md
+      select-none
+    "
+  >
+    ₹{product.price}
+  </span>
+
+  <div
+    className="
+      absolute
+      inset-0
+      flex
+      items-center
+      justify-center
+      text-xs
+      uppercase
+      tracking-[4px]
+      font-bold
+      text-gray-600
+      bg-white/70
+      backdrop-blur-md
+    "
+  >
+    Launching Soon
+  </div>
+
+</div>
 
       <div
         className="

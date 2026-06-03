@@ -1,32 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-/* GLOBAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* GLOBAL RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-/* SMOOTH SCROLL */
-html {
-  scroll-behavior: smooth;
-}
+  /* SMOOTH SCROLL */
+  html {
+    scroll-behavior: smooth;
+  }
 
-/* BODY */
-body {
-  overflow-x: hidden;
-  font-family: sans-serif;
-  background: #f4f4f5;
-}
+  /* BODY */
+  body {
+    overflow-x: hidden;
+    font-family: sans-serif;
+    background: #f4f4f5;
+  }
 
-/* HIDE SCROLLBAR BUT KEEP SCROLL */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
+  /* HIDE SCROLLBAR BUT KEEP SCROLL */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }

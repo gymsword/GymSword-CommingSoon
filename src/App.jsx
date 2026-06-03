@@ -6,6 +6,8 @@ import {
   Navigate,
 } from "react-router-dom";
 
+
+
 /* POPUP */
 import WelcomePopup from "./components/WelcomePopup";
 
@@ -28,10 +30,8 @@ import Settings from "./admin/pages/Settings";
 import ProtectedAdmin from "./admin/components/ProtectedAdmin";
 
 function App() {
-
   return (
     <>
-
       {/* SCROLL TOP */}
       <ScrollToTop />
 
@@ -46,9 +46,7 @@ function App() {
         {/* ADMIN ROOT */}
         <Route
           path="/admin"
-          element={
-            <Navigate to="/admin/login" />
-          }
+          element={<Navigate to="/admin/login" />}
         />
 
         {/* ADMIN LOGIN */}

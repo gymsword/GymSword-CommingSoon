@@ -5,28 +5,28 @@ export default function TopCollections() {
 
   const collections = [
     {
-      title: "T-Shirts",
-      image: "/tshirt1.png",
+      title: "Joggers",
+      image: "/joggers.png",
     },
     {
-      title: "Sweatshirt",
-      image: "/sweatshirt1.png",
+      title: "Leggings",
+      image: "/leggies.png",
     },
     {
       title: "Hoodies",
       image: "/hoodie.jpg",
     },
     {
-      title: "Polo T-Shirts",
-      image: "/polo.jpg",
+      title: "Crop jacket",
+      image: "/crop-jacket.png",
     },
     {
       title: "Oversized T-Shirt",
       image: "/oversize.png",
     },
     {
-      title: "Unique Design Clothes",
-      image: "/Customized.jpg",
+      title: "Sports bra",
+      image: "/Sport-bra.png",
     },
   ];
 
